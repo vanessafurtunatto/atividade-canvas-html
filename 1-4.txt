@@ -1,0 +1,4 @@
+1. DOM ou mais especificamente Document Object Model, e tem a competência de modelar todo o HTML, vai gerando uma ramificação no HTML, já o HTML se ramifica pelo head e o body. 
+2. A tag Canvas nos permite manipular e até mesmo desenhar elementos gráficos como formas geométricas.
+3. A linguagens e tecnologias geralmente envolvidas no desenvolvimento de produtos baseados em Canvas são: JavaScript, HTML5 e CC. 
+4. document.getElementId() é usado para buscar elementos pelo ID dentro de um determinado escopo. 

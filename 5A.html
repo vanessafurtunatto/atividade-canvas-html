@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5A</title>
+</head>
+<body>
+    <canvas id="canvas" width="1280" height="720">
+        
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+
+        const draw = canvas.getContext("2d");
+
+        const Triangle = (x, y, outlined) => {
+
+            draw.beginPath();
+            draw.moveTo(x + 5, y + 75);
+            draw.lineTo(x + 50, y + 5);
+            draw.lineTo(x + 95, y + 75);
+            draw.closePath();
+
+            draw.lineWidth = 2;
+            draw.strokeStyle= "#00100ff";
+            draw.stroke();
+
+            if(outlined){
+                draw.fillStyle = "#00100ff";
+            } else {
+                draw.fillStyle = 'rgba(0,0,0,0)';
+            }
+
+            ctx.fill();
+        }
+
+        draw.beginPath();
+        draw.rect(2, 2, 320, 180);
+        draw.lineWidth = 2;
+        draw.strokeStyle= "#0098ff";
+        draw.stroke();
+        draw.closePath();
+
+        draw.beginPath();
+        draw.moveTo(110, 125);
+        draw.lineTo(160, 45);
+        draw.lineTo(210, 125);
+        draw.closePath();
+        
+        draw.lineWidth = 2;
+        draw.strokeStyle= "#0098ff";
+        draw.stroke();
+
+        draw.beginPath();
+        draw.arc(500, 90, 50, 0, Math.PI * 2, true);
+        draw.lineWidth = 2;
+        draw.stroke();
+        draw.closePath();
+
+        draw.beginPath();
+        draw.rect(470, 60, 60, 60);
+        draw.fillStyle = "#00a7ff";
+        draw.fill();
+        draw.lineWidth = 2;
+        draw.strokeStyle= "#0099ff";
+        draw.stroke();
+        draw.closePath();
+
+        draw.beginPath();
+        draw.moveTo(710, 125);
+        draw.lineTo(760, 45);
+        draw.lineTo(810, 125);
+        draw.closePath();
+
+        draw.lineWidth = 2;
+        draw.strokeStyle= "#0099ff";
+        draw.stroke();
+
+        draw.beginPath();
+        draw.moveTo(770, 125);
+        draw.lineTo(820, 45);
+        draw.lineTo(870, 125);
+        draw.closePath();
+        
+        draw.lineWidth = 2;
+        draw.strokeStyle= "#0099ff";
+        draw.stroke();
+
+    </script>
+</body>
+</html>

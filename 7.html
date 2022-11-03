@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    <canvas id="canvas" width="640" height="480" style="border: 1px solid rgb(182, 24, 24);">
+        
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var draw = canvas.getContext("2d");
+        var x = canvas.width / 2, y = canvas.height / 2;
+        var X = 1, Y = 1;
+        var speed = 6;
+        var stepX = 0;
+        var stepY = 0;
+        var image = new Image();
+
+        function move(){
+            image.src = '1xg.jpeg';
+            image.onload = function() {
+                draw.drawImage(image, x, y, 120, 120);
+            }
+
+            draw.clearRect(0, 0, canvas.width, canvas.height);
+            draw.fill();
+
+            if(x >= 590 || x < 50){
+                X = X == 1 ? -1 : 1;
+                degrees = X == 1 ? -90 : 90;
+            }
+
+            if(y >= 430 || y < 50){
+                Y = Y == 1 ? -1 : 1;
+            }
+            x += stepX * X;
+            y += stepY * Y;
+        }
+
+        function changeDirection(axis, isPositive){
+            if(axis.toUpperCase() === 'X'){
+                X = isPositive ? 1 : -1;
+                stepX = speed;
+                stepY = 0;
+            } else {
+                Y = isPositive ? 1 : -1;
+                stepX = 0;
+                stepY = speed;
+            }
+
+        }
+
+        function stop() {
+            stepX = 0;
+            stepY = 0;
+            stepX = 0;
+            stepY = 0;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            console.log(e)
+
+            if(e.code == 'Space'){
+                stop();
+                return;
+            }
+            
+            switch(e.key) {
+                case 'ArrowUp': { 
+                    changeDirection('Y', false);
+                    break;
+                }
+                case 'ArrowDown': { 
+                    changeDirection('Y', true);
+                    break;
+                }
+                case 'ArrowLeft': { 
+                    changeDirection('X', false);
+                    break;
+                }
+                case 'ArrowRight': { 
+                    changeDirection('X', true);
+                    break;
+                }
+                
+            }
+        })
+
+        interval = setInterval(move, 50)
+
+    </script>
+</body>
+</html>

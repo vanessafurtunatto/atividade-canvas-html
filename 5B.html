@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5b</title>
+    <style>
+      canvas {
+        border: 1px solid rgb(33, 60, 143);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="490" height="310"></canvas>
+
+    <script>
+      let canvas = document.querySelector("canvas");
+      let draw = canvas.getContext("2d");
+
+      for (let a = 0; a < 8; a++) {
+        for (let b = 0; b < 5; b++) {
+
+          draw.strokeStyle = "blue";
+          draw.beginPath();
+          draw.lineWidth = 2;
+          draw.strokeRect(10 + a * 60, 10 + b * 60, 50, 50);
+
+          draw.fillStyle = "blue";
+          draw.beginPath();
+          draw.moveTo(20 + a * 60, 50 + b * 60);
+          draw.lineTo(50 + a * 60, 50 + b * 60);
+          draw.lineTo(35 + a * 60, 20 + b * 60);
+          draw.closePath();
+          draw.stroke();
+        }
+      }
+    </script>
+  </body>
+</html>
